@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tf-idf-service
+spec:
+  selector:
+    matchLabels:
+      app: tf-idf-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tf-idf-service
+    spec:
+      containers:
+      - name: tf-idf-service
+        image: tf_idf_service
+        ports:
+        - containerPort: 4001
+        imagePullPolicy: Never
