@@ -36,10 +36,10 @@ defmodule TfIdfService do
     result
   end
 
-  def isOk(%HTTPotion.ErrorResponse{message: "connection_closed"}) do
+  def isOk(%HTTPotion.ErrorResponse{}) do
     :nil
   end
-  def isOk(%HTTPotion.Response{status_code: 200, body: result}) do
+  def isOk(%HTTPotion.Response{status_code: 200}) do
     :ok
   end
 end
